@@ -15,4 +15,4 @@
   folderul exercises
 - puteti sa testati ruland testele din tests/exercises
 
-# Merge numai pe Linux :(
+# Merge numai pe Linux/subsistem (nu direct de pe windows) :(
