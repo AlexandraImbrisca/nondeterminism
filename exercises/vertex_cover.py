@@ -12,4 +12,15 @@ def vertex_cover(g: Graph, k: int):
     :param k: The desired number of vertices
     :return: True if the condition is satisfied, false otherwise.
     """
+    S = []
+    for i in range(k):
+        u = choice(g.vertices)
+        if u in S:
+            fail()
+        S.append(u)
+
+    for (u, v) in g.edges:
+        if u not in S and v not in S:
+            fail()
+
     success()

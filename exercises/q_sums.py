@@ -11,5 +11,18 @@ def q_sums(v: list, q: int):
     :return: True if we can find a subset that satisfies the condition.
     False otherwise.
     """
+    sum = 0
     n = len(v)
-    success()
+    subset = []
+
+    for _ in range(n):
+        x = choice(v)
+        if x in subset:
+            fail()
+
+        sum += x
+        subset.append(x)
+
+        if sum == q:
+            success()
+    fail()

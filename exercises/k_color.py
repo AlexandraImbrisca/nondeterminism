@@ -12,4 +12,8 @@ def k_color(g: Graph, k: int):
     :param k: The maximum number of colors.
     :return: True if possible, false otherwise.
     """
+    colors = {u: choice(range(k)) for u in g.vertices}
+    for (u, v) in g.edges:
+        if colors[u] == colors[v]:
+            fail()
     success()

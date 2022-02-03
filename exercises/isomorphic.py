@@ -18,4 +18,18 @@ def isomorphic(g1: Graph, g2: Graph):
     :return: True if there is at least one function that satisfies the
     condition. Otherwise, it returns false.
     """
+    if len(g1.vertices) != len(g2.vertices) or len(g1.edges) != len(g2.edges):
+        fail()
+
+    f = {}
+    for u in g1.vertices:
+        v = choice(g2.vertices)
+        if v in f.values():
+            fail()
+        f[u] = v
+
+    for (u, v) in g1.edges:
+        if not g2.has_edge(f[u], f[v]):
+            fail()
+
     success()

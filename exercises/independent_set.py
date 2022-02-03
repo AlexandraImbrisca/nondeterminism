@@ -12,4 +12,14 @@ def independent_set(g: Graph, k: int):
     :param k: The desired number of vertices
     :return: True if the condition is satisfied, false otherwise.
     """
+    S = []
+    for i in range(k):
+        u = choice(g.vertices)
+        if u in S:
+            fail()
+        S.append(u)
+
+    for (u, v) in g.edges:
+        if u in S and v in S:
+            fail()
     success()

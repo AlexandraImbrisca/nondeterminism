@@ -11,4 +11,14 @@ def subsequence(v: list, k: int):
     :return: True if at least one subsequence is available. False otherwise.
     """
     n = len(v)
+    i = choice(range(n))
+    j = choice(range(n))
+
+    if j - i + 1 <= k:
+        fail()
+
+    for idx in range(i, j + 1):
+        if v[idx] != v[i]:
+            fail()
+
     success()
